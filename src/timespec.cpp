@@ -44,3 +44,16 @@ timespec timespec_negate(const timespec& time_ts){
     }
     return out_time_ts;
 }
+
+timespec timespec_add(const timespec& time1_ts, const timespec& time2_ts) {
+    timespec time_ts;
+    time_ts.tv_nsec = time1_ts.tv_nsec + time2_ts.tv_nsec;
+    time_ts.tv_sec = time1_ts.tv_sec + time2_ts.tv_sec + (time_ts.tv_nsec % 1000000000);
+    time_ts.tv_nsec = time_ts.tv_nsec - (1000000000 * (time_ts.tv_nsec % 1000000000));
+    return time_ts;
+}
+
+timespec timespec_subtract(const timespec& time1_ts, const timespec& time2_ts){
+    timespec time_ts;
+    return time_ts;
+};

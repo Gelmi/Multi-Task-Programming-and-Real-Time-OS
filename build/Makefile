@@ -1,8 +1,5 @@
 CC=g++
 CFLAGS=-Wall -Wextra
-SRC=$(wildcard ../src/*.cpp)
 
-run: $(SRC)
-	$(CC) -o $@ $^ $(CFLAGS)
-
-
+td1a: $(SRC)
+	$(CC) -o $@ ../src/td1a.cpp ../src/timespec.cpp $(CFLAGS)
