@@ -1,5 +1,6 @@
 #include "Chrono.h"
 #include "TimespecOps.h"
+#include <cstdio>
 
 Chrono::Chrono() {}
 
@@ -7,7 +8,7 @@ Chrono::~Chrono() {}
 
 timespec Chrono::stop() {
     timespec_get(&m_stopTime, TIME_UTC);
-    return m_startTime - m_stopTime;
+    return m_stopTime - m_startTime;
 }
 
 void Chrono::restart() {
@@ -23,10 +24,10 @@ timespec Chrono::lap() {
     if(m_startTime == m_stopTime){
         timespec lap_time;
         timespec_get(&lap_time, TIME_UTC);
-        return m_startTime - lap_time;
+        return lap_time - m_startTime;
     }
     else {
-        return m_startTime - m_stopTime;
+        return m_stopTime - m_startTime;
     }
 }
 
