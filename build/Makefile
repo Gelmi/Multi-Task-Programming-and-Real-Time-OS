@@ -6,3 +6,9 @@ td1a: $(SRC)
 
 td1b: $(SRC)
 	$(CC) -o $@ ../src/td1b.cpp ../src/timespec.cpp ../src/chrono.cpp $(CFLAGS)
+
+td2a: $(SRC)
+	$(CC) -o $@ ../src/td2a.cpp $(CFLAGS)
+
+td2b: $(SRC)
+	$(CC) -o $@ ../src/td2b.cpp ../src/timer.cpp ../src/timespec.cpp $(CFLAGS)
