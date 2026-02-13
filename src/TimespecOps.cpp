@@ -3,7 +3,7 @@
 double TimespecOps::timespec_to_ms(const timespec& time_ts)
 {
     double time_ms = time_ts.tv_sec*1000;
-    time_ms = time_ms + time_ts.tv_nsec/1000000;
+    time_ms = time_ms + ((double)time_ts.tv_nsec)/1000000;
     return time_ms;
 }
 
@@ -56,8 +56,9 @@ timespec TimespecOps::timespec_add(const timespec& time1_ts, const timespec& tim
     result.tv_nsec = time1_ts.tv_nsec + time2_ts.tv_nsec;
     if(result.tv_nsec >= 1000000000)
     {
-        result.tv_nsec -= 1000000000;
-        result.tv_sec += 1;
+        int overflow = result.tv_nsec/1000000000;
+        result.tv_nsec = result.tv_nsec%1000000000;
+        result.tv_sec += overflow;
     }
     return result;
 }
