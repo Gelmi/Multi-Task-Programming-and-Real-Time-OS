@@ -7,9 +7,9 @@ class Looper {
         volatile bool doStop;
         volatile double iLoop;
 
-    private:
+    public:
         double runLoop(double nLoops = DBL_MAX);
-        double getSample();
+        double getSample() const;
         double stopLoop();
 };
 

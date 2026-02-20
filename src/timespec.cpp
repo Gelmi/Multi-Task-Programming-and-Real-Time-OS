@@ -9,25 +9,25 @@ bool XOR(bool a, bool b){
 
 double timespec_to_ms(const timespec& time_ts) {
     double time_ms = 0;
-    time_ms += time_ts.tv_sec * 1000000;
-    time_ms += time_ts.tv_nsec / 1000.0;
+    time_ms += time_ts.tv_sec * 1000;
+    time_ms += time_ts.tv_nsec / 1000000.0;
     return time_ms;
 }
 
 timespec timespec_from_ms(double time_ms) {
     timespec time_ts;
-    int seconds = time_ms / 1000000;
-    int milliseconds = (time_ms - (seconds * 1000000)) * 1000;
+    int seconds = time_ms / 1000;
+    int nanoseconds = (time_ms - (seconds * 1000)) * 1000000;
     if(seconds < 0) {
         time_ts.tv_sec = seconds - 1;
-        time_ts.tv_nsec = 1000000000 + milliseconds;
+        time_ts.tv_nsec = 1000000000 + nanoseconds;
         if(time_ts.tv_nsec == 1000000000) {
             time_ts.tv_sec += 1;
             time_ts.tv_nsec = 0;
         }
    } else {
         time_ts.tv_sec = seconds;
-        time_ts.tv_nsec = milliseconds;
+        time_ts.tv_nsec = nanoseconds;
     }
     return time_ts;
 }
