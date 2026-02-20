@@ -12,3 +12,18 @@ td2a: $(SRC)
 
 td2b: $(SRC)
 	$(CC) -o $@ ../src/td2b.cpp ../src/timer.cpp ../src/timespec.cpp $(CFLAGS)
+
+td2c: $(SRC)
+	$(CC) -o $@ ../src/td2c.cpp ../src/chrono.cpp ../src/timespec.cpp ../src/looper.cpp $(CFLAGS)
+
+td2d: $(SRC)
+	$(CC) -o $@ ../src/td2d.cpp ../src/chrono.cpp ../src/timespec.cpp ../src/looper.cpp ../src/calibrator.cpp ../src/timer.cpp $(CFLAGS)
+
+td2e: $(SRC)
+	$(CC) -o $@ ../src/td2e.cpp ../src/cpuloop.cpp ../src/chrono.cpp ../src/timespec.cpp ../src/looper.cpp ../src/calibrator.cpp ../src/timer.cpp $(CFLAGS)
+
+td3a: $(SRC)
+	$(CC) -o $@ ../src/td3a.cpp $(CFLAGS)
+
+td3b: $(SRC)
+	$(CC) -o $@ ../src/td3b.cpp ../src/mutex.cpp ../src/timespec.cpp $(CFLAGS)
