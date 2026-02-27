@@ -1,5 +1,4 @@
 #include "counter.h"
-#include<iostream>
 
 Counter::Counter(bool protect) : m_value(0), protect(protect) {
     if(protect) {
@@ -13,20 +12,17 @@ Counter::Counter(bool protect) : m_value(0), protect(protect) {
 }
 
 double Counter::incrDoProtect() {
-    std::cout << "Counter do protect" << std::endl;
-    Mutex::Lock lock((Mutex&)this->p_mutex);
+    Mutex::Lock lock(*this->p_mutex);
     this->m_value += 1.0;
     return this->m_value;
 }
 
 double Counter::incrNoProtect() {
-    std::cout << "Counter no protect" << std::endl;
     this->m_value += 1.0;
     return this->m_value;
 }
 
 double Counter::increment(){
-    std::cout << "Incrementando counter" << std::endl;
     return (this->*incrProtect)();
 }
 
@@ -40,7 +36,6 @@ bool Counter::isProtected() {
 
 void Incrementer::run() {
     for(auto i = 0; i < this->nLoops; i++){
-        std::cout << this->getId() << " Trying to increment counter" << std::endl;
         r_counter.increment();
     }
 }
