@@ -33,7 +33,7 @@ int main(){
     for (char cmd = 'r'; cmd != 's'; std::cin >> cmd)
         std::cout << "Type 's' to stop: " << std::flush;
     data.stop = true;
-    std::cout << "Counter value = " << data.counter << std::endl;
+    std::cout << "Counter value = " << std::fixed << data.counter << std::endl;
     pthread_join(incrementThread[0], nullptr);
     pthread_join(incrementThread[1], nullptr);
     pthread_join(incrementThread[2], nullptr);
