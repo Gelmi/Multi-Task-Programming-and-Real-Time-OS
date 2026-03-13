@@ -4,8 +4,13 @@
 #include <pthread.h>
 #include <string>
 
-Mutex::Mutex(){
-    int err = pthread_mutex_init(&this->posixMutexId, nullptr);
+Mutex::Mutex(bool isInversionSafe){
+    pthread_mutexattr_init(&this->posixMutexAttrId);
+    if (isInversionSafe){
+        pthread_mutexattr_settype(&this->posixMutexAttrId, PTHREAD_MUTEX_RECURSIVE);
+        pthread_mutexattr_setprotocol(&this->posixMutexAttrId, PTHREAD_PRIO_INHERIT);
+    }
+    int err = pthread_mutex_init(&this->posixMutexId, &this->posixMutexAttrId);
     if (err != 0) throw std::string("pthread_mutex_init failed: error ") + std::to_string(err);
 }
 

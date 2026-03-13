@@ -4,7 +4,8 @@ Calibrator::Calibrator(double samplingPeriod_ms, unsigned nSamples) : Timer(){
     this->nSamples = nSamples;
     looper = Looper();
     this->start_ms(samplingPeriod_ms, true);
-    looper.runLoop();  
+    looper.runLoop(); 
+
     int n = (int)this->samples.size();
 
     double sum_x  = 0.0, sum_y  = 0.0;
