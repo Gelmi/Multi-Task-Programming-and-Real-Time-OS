@@ -39,3 +39,6 @@ td3e: $(SRC)
 
 td4a: $(SRC)
 	$(CC) -o $@ ../src/monitor.cpp ../src/mutex.cpp ../src/timespec.cpp $(CFLAGS)
+
+td4b: $(SRC)
+	$(CC) -o $@ ../src/td4b.cpp ../src/semaphore.cpp ../src/thread.cpp ../src/mutex.cpp ../src/monitor.cpp ../src/timespec.cpp ../src/chrono.cpp $(CFLAGS)
