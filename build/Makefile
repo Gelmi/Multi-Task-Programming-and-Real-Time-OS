@@ -1,5 +1,5 @@
-CC=g++
-CC_TEST=arm-linux-g++
+CC_TEST=g++
+CC=arm-linux-g++
 CFLAGS=-Wall -Wextra
 
 all: clear td1a td2a td2a td2b td2c td2d td2e td3a td3b td3c td3d td4b
