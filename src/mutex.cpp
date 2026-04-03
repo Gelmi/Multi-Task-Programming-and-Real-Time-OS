@@ -49,6 +49,10 @@ Mutex::Lock::~Lock(){
     mutex.unlock();
 }
 
+pthread_mutex_t* Mutex::Lock::getPosixMutexId(){
+    return &mutex.posixMutexId;
+}
+
 long TimeoutException::getTimeout_ms() const {
     return this->timeout_ms;
 }

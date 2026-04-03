@@ -24,6 +24,9 @@ class Mutex::Lock {
         Lock(Mutex& mutex, double timeout_ms);
         ~Lock();
 
+    protected:
+        pthread_mutex_t* getPosixMutexId();
+
     private:
         Mutex& mutex;
 };
