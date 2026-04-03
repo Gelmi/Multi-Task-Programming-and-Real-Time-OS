@@ -1,7 +1,8 @@
 #include <time.h>
 #include <signal.h>
+#include <climits>
 
-#define DBL_MAX 100
+// #define DBL_MAX 100
 
 class Looper {
 private:
