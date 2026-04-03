@@ -7,12 +7,12 @@ class Thread {
     private:
         pthread_t posixThreadId;
         pthread_attr_t posixThreadAttrId;
-        const int id;
         static void* call_run(void* v_thread);
         bool started;
         long duration;
 
     protected:
+        const int id;
         virtual void run() = 0;
 
     public:
