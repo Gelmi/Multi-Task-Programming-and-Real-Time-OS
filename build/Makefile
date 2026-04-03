@@ -1,8 +1,11 @@
-CC_TEST=g++
-CC=arm-linux-g++
+CC=g++
+CC_TEST=arm-linux-g++
 CFLAGS=-Wall -Wextra
 
-all: td1a td2a td2a td2b td2c td2d td2e td3a td3b td3c td3d td3e td4a td4b
+all: clear td1a td2a td2a td2b td2c td2d td2e td3a td3b td3c td3d td4b
+
+clear:
+	rm td*
 
 td1a: $(SRC)
 	$(CC) -o $@ ../src/td1a.cpp ../src/timespec.cpp $(CFLAGS)
