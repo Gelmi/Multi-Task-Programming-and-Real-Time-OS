@@ -23,7 +23,7 @@ void* Thread::call_run(void* v_thread){
 }
 
 void Thread::start(int priority){
-    sched_param schedParams;
+    sched_param schedParams{};
     schedParams.sched_priority = priority;
     pthread_attr_setschedparam(&this->posixThreadAttrId, &schedParams);
     pthread_create(&this->posixThreadId, &this->posixThreadAttrId, call_run, this);
@@ -62,7 +62,7 @@ int Thread::getMinPrio(int policy){
 }
 
 void Thread::setMainSched(int policy){
-    sched_param schedParam;
+    sched_param schedParam{};
     pthread_setschedparam(pthread_self(), policy, &schedParam);
 }
 
