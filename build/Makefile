@@ -2,7 +2,7 @@
 CC=arm-linux-g++
 CFLAGS=-Wall -Wextra
 
-all: clear td1a td2a td2a td2b td2c td2d td2e td3a td3b td3c td3d td4b
+all: clear td1a td2a td2a td2b td2c td2d td2e td3a td3b td3c td3d td3e td4b
 
 clear:
 	rm td*
@@ -41,7 +41,7 @@ td3d: $(SRC)
 	$(CC) -o $@ ../src/td3d.cpp ../src/counter.cpp ../src/thread.cpp ../src/chrono.cpp ../src/mutex.cpp ../src/timespec.cpp $(CFLAGS)
 
 td3e: $(SRC)
-	$(CC) -o $@ ../src/td3e.cpp ../src/thread.cpp ../src/cpuloop.cpp ../src/calibrator.cpp ../src/mutex.cpp $(CFLAGS)
+	$(CC) -o $@ ../src/td3e.cpp ../src/thread.cpp ../src/cpuloop.cpp ../src/calibrator.cpp ../src/mutex.cpp ../src/timespec.cpp ../src/timer.cpp ../src/chrono.cpp ../src/looper.cpp $(CFLAGS)
 
 td4a: $(SRC)
 	$(CC) -o $@ ../src/monitor.cpp ../src/mutex.cpp ../src/timespec.cpp $(CFLAGS)
