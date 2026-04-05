@@ -1,8 +1,8 @@
-#include "thread.h"
+#include "monitor.h"
 
-class Monitor : public Thread {
-    private:
-        
-    public:
+int main(){
+    Mutex m = Mutex();
+    Monitor mon = Monitor(m);
+    return 0;
+}
 
-};

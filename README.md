@@ -1,9 +1,19 @@
 # Multi-Task Programming and Real-Time OS
 
+Binome: Guilherme Gelmi et Nuno Kuschnaroff
+
+Make sure to enter the Makefile and comment/uncomment the desired compiler for your architecture.
+
 To compile all tasks, run
 ```bash
 cd build
 make all
+```
+
+To compile the task from item Y from td X, run
+```bash
+cd build
+make tdXY
 ```
 
 # TD1
@@ -21,7 +31,7 @@ Et le methode virtuel pure "callback()" est protegé parce qu'il sera accedé pa
 ## 2c) Fonction simple consommant du CPU - DONE
 
 Le seule methode qui peut être déclarée const c'est getSample() parce que elle ne change pas aucun donnée de la classe.
-La courbe des valeurs de temps d'exécution est dans le dossie build et s'appelle "td2c.png" (Execution sur processeur x86).
+La courbe des valeurs de temps d'exécution est dans le dossier build et s'appelle "fig_td2c.png" (Execution sur processeur x86).
 
 ## 2d) Échantillonage du temps d'exécution d'une fonction - DONE
 
@@ -40,4 +50,9 @@ La courbe des valeurs de temps d'exécution est dans le dossie build et s'appell
 
 ## 3d) Accès concurrent à des données partagées - DONE
 
+## 3e) Inversion de priorité
 
+# TD4
+## 4a) Création de la classe Monitor - DONE
+
+## 4b) Création d'une classe Sémaphore - DONE

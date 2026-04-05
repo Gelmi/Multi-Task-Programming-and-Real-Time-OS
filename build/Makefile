@@ -1,4 +1,4 @@
-CC_TEST=g++
+# CC=g++
 CC=arm-linux-g++
 CFLAGS=-Wall -Wextra
 
